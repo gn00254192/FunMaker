@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" 
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_gravity="top|left" 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#ecf0f1"
+		android:layout_weight="10" >
+
+		<TextView
+		    android:id="@+id/textView1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0"
+		    android:text="     " />
+
+		<ImageView
+			android:id="@+id/penBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_tool_bg"
+			android:src="@drawable/selector_pen"  
+			android:layout_weight="1"
+			android:layout_margin="1dip"
+			/>
+		<ImageView
+			android:id="@+id/eraseBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_tool_bg"
+			android:src="@drawable/selector_eraser"
+			android:layout_weight="1"
+			android:layout_margin="1dip"
+			/>
+		<ImageView
+			android:id="@+id/textBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_tool_bg"
+			android:src="@drawable/selector_text"
+			android:layout_weight="1"
+			android:layout_margin="1dip"
+			/>
+		<ImageView
+			android:id="@+id/fillingBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_tool_bg"
+			android:src="@drawable/selector_filling"
+			android:layout_weight="1"
+			android:layout_margin="1dip"
+			/>
+		<ImageView
+			android:id="@+id/colorPickerBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_tool_bg"
+			android:src="@drawable/selector_colorpicker"
+			android:layout_weight="1"
+			android:layout_margin="1dip"
+			/>
+
+		<TextView
+		    android:id="@+id/textView2"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0"
+		    android:text="     " />
+		
+	</LinearLayout>
+
+	<FrameLayout 
+		android:id="@+id/layout_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_weight="1" >
+		<RelativeLayout 
+				android:id="@+id/canvas_container"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center">
+			<ImageView
+				android:id="@+id/canvas_default_background"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"				
+				android:src="@drawable/scanvas_bg"
+				android:scaleType="centerCrop"/>
+
+		</RelativeLayout>	
+	</FrameLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:background="#ecf0f1"
+	    android:layout_weight="10" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="       " />
+	    <ImageView
+	        android:id="@+id/undoBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dip"
+	        android:layout_weight="1"
+	        android:background="@drawable/selector_tool_bg"
+	        android:src="@drawable/selector_undo" />
+
+	    <ImageView
+	        android:id="@+id/redoBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dip"
+	        android:layout_weight="1"
+	        android:background="@drawable/selector_tool_bg"
+	        android:src="@drawable/selector_redo" />
+
+	    
+		<TextView
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="4"
+		    android:text="       " />
+	    
+	    <ImageView
+	        android:id="@+id/insertBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dip"
+	        android:layout_weight="1"
+	        android:background="@drawable/selector_tool_bg"
+	        android:src="@drawable/selector_image" />
+	    <TextView
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="       " />
+	</LinearLayout>
+		
+</LinearLayout>

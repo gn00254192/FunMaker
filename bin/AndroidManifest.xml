@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.funmaker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.sec.android.providers.insight.permission.READ_INSIGHT_DB" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.funmaker.MainActivity"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.Alist"
+            android:label="@string/title_activity_alist"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.Result"
+            android:label="@string/title_activity_result"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.BasicEditor"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.tools.ToolStampList"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:label="@string/title_activity_insert_stamp"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.SAMMEditor"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:label="四格漫畫"
+            android:screenOrientation="landscape" >   
+        </activity>
+        <activity
+            android:name="com.example.funmaker.DrawEditor"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:label="@string/title_activity_alist"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.ImageSearch"
+            android:label="@string/title_activity_image_search"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.funmaker.Search"
+            android:label="@string/title_activity_image_search"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <!-- SAMM Editor Example -->
+        <activity
+            android:name="com.example.sammeditor.SPen_Example_AnimationViewer"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode" />
+        <activity
+            android:name="com.example.sammeditor.SPen_Example_VideoDemoFileList"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode" />
+
+        <!-- Tools -->
+        <activity
+            android:name="com.example.tools.ToolListActivity"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode" />
+        <activity
+            android:name="com.example.tools.ToolTextDialogInput"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.tools.ToolFileTotalInfoShow"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode" />
+        <activity
+            android:name="com.example.tools.PreferencesOfSAMMOption"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.example.tools.PreferencesOfAnimationOption"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.example.tools.PreferencesOfOtherOption"
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.example.funmaker.FacebookShare"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_facebook_share"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity android:name="com.facebook.LoginActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.funmaker.Guide"
+            android:label="四格漫畫" 
+            android:configChanges="locale|orientation|keyboard|screenSize|keyboardHidden|uiMode"
+            android:screenOrientation="landscape" >
+			<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>     
+        </activity>
+    </application>
+
+</manifest>

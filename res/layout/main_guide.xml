@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/main_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="#CC000000"
+	android:weightSum="10.0"
+	android:visibility="gone"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+	android:id="@+id/linearlayout1"
+	android:layout_width="match_parent"
+	android:layout_height="0px"
+	android:layout_weight="3"
+	android:orientation="vertical">
+    
+    <ImageView
+        android:id="@+id/ll1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_marginRight="5dp" 
+	    android:layout_marginTop="20dp" 
+	    android:background="@drawable/ic_launcher"
+	    android:orientation="vertical"
+	    android:layout_gravity="right">
+	</ImageView>
+
+    <TextView
+	    android:id="@+id/TopRightText"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize = "25sp" 
+        android:textColor="@android:color/white"
+        android:layout_marginTop="5dp"
+	    android:text="著作聲明" 
+	    android:layout_gravity="right"/>
+    </LinearLayout>
+    
+    <LinearLayout
+	android:id="@+id/linearlayout2"
+	android:layout_width="match_parent"
+	android:layout_height="0px"
+	android:layout_weight="3"
+	android:orientation="vertical">
+	
+	<TextView
+	    android:id="@+id/textset"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginTop="15dp"
+	    android:textSize = "25sp" 
+        android:textColor="@android:color/white"
+	    android:text="快速查詢" 
+	    android:layout_gravity="right"/>
+	
+  <ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="95dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:background="@drawable/ic_launcher"
+	    android:layout_marginTop="5dp"
+	    android:orientation="vertical" >
+	</ImageView>
+  </LinearLayout>
+  
+    <LinearLayout
+	android:id="@+id/linearlayout3"
+	android:layout_width="match_parent"
+	android:layout_height="0px"
+	android:layout_weight="3"
+	android:orientation="vertical">
+	
+	<TextView
+	    android:id="@+id/textset2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentBottom="true"
+	    android:layout_marginTop="15dp"
+	    android:textSize = "25sp" 
+        android:textColor="@android:color/white"
+	    android:text="條件查詢" 
+	    android:layout_gravity="right"/>
+	
+	<ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="95dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentBottom="true"
+	    android:background="@drawable/ic_launcher"
+	    android:layout_marginTop="5dp"
+	    android:orientation="vertical" >
+	</ImageView>
+   </LinearLayout>
+   
+   <LinearLayout
+	android:id="@+id/linearlayout4"
+	android:layout_width="match_parent"
+	android:layout_height="0px"
+	android:layout_weight="1"
+	android:orientation="vertical">
+	<TextView
+	    android:id="@+id/textexit"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentBottom="true"
+	    android:textColor="@android:color/white"
+	    android:textSize = "30sp" 
+	    android:paddingRight="20dp"
+	    android:paddingBottom="20dp"
+	    android:background="@drawable/ic_launcher"
+	    android:text="我知道了!"
+	    android:layout_gravity="right" />
+</LinearLayout>
+    
+    
+</LinearLayout>

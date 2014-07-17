@@ -13,18 +13,14 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import com.example.funmaker.R.id;
 
-import android.R.color;
+
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.media.audiofx.BassBoost.Settings;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -32,17 +28,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -51,13 +43,10 @@ import android.widget.Toast;
 public class Alist extends Activity {
 	Boolean searchable = true;
 	ListView lv;
-	TextView tv;
 	int[] images;
 	static String[][] ulrlist = new String[5][3];
 	private Bitmap[][] image = new Bitmap[5][3];
-	private ProgressDialog progressDialog = null;
-	
-	/**載入*/
+
 	public class PostTask extends AsyncTask<Void, String, Bitmap> {
 		public ImageView im;
 		public int p;
@@ -68,15 +57,13 @@ public class Alist extends Activity {
 
 		}
 
-		
-		
 		@Override
 		protected Bitmap doInBackground(Void... params) {
 
 			// All your code goes in here
 
 			// If you want to do something on the UI use progress update
-			Log.v("Search image", "載入類別" + p + "圖片。");
+
 			image[p][0] = getBitmapFromURL(ulrlist[p][0]);
 			image[p][1] = getBitmapFromURL(ulrlist[p][1]);
 			image[p][2] = getBitmapFromURL(ulrlist[p][2]);
@@ -91,11 +78,8 @@ public class Alist extends Activity {
 				posttask = new PostTask(p + 1);
 
 				posttask.execute();
-			} else {
+			} else
 				searchable = true;
-				progressDialog.dismiss();
-			}
-				
 			super.onPostExecute(result);
 		}
 
@@ -114,7 +98,7 @@ public class Alist extends Activity {
 
 		@Override
 		protected Bitmap doInBackground(Void... params) {
-			Log.v("search image", "開始搜尋 " + surl + "。");
+			Log.v("adasd", "ewfwefweffewfwewfwef");
 
 			// All your code goes in here
 
@@ -122,7 +106,6 @@ public class Alist extends Activity {
 			String str;
 
 			URL myUrl = null;
-			//搜尋關鍵字
 			try {
 				myUrl = new URL(
 						"http://summerimagenetapi.appspot.com/imagenetapi?act=1&name="
@@ -130,14 +113,10 @@ public class Alist extends Activity {
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				Log.v("Search image", "MalformedURLException");  
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				Log.v("Search image", "UnsupportedEncodingException");  
-
 			}
-			
 			// 取得 URLConnection
 			HttpURLConnection conn;
 			try {
@@ -158,10 +137,11 @@ public class Alist extends Activity {
 				BufferedReader reader = new BufferedReader(
 						new InputStreamReader(conn.getInputStream(), "UTF-8"));
 				for (int i = 0; i < 5; i++) {
-					Log.v("Search image", "截取類別" + i + "ID。");
+					Log.v("adasd", "ewfwefweffewfwewfwef" + i);
 
 					str = reader.readLine();
 					if (str != null) {
+						Log.v("str",str);
 						str=str.substring(0,str.indexOf(","));
 						setting.node[i] = str;
 					} else
@@ -217,26 +197,10 @@ public class Alist extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTitle("搜尋圖庫");
-		//全螢幕顯示
-		this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		//不顯示標題列
-	    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_alist);
 		lv = (ListView) findViewById(R.id.listView1);
-		Button btn = (Button) findViewById(id.button1);
-		tv = (TextView) findViewById(R.id.textView_search);
+		Button btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(push);
-		tv.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				tv.setBackgroundColor(color.holo_blue_bright);
-				finish();
-			}
-		});
-		
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -248,65 +212,21 @@ public class Alist extends Activity {
 				// posttask.execute();
 				// TODO Auto-generated method stub
 				setting.select = arg2;
-				Log.v("Search image", "選擇了類別" + arg2);
 				Intent intent = new Intent(Alist.this, Result.class);
-				startActivityForResult(intent, 9527);
-//				Toast.makeText(getApplicationContext(),
-//						"this is " + (arg2 + 1), Toast.LENGTH_SHORT).show();
+				startActivity(intent);
+				Toast.makeText(getApplicationContext(),
+						"你選到第 " + (arg2 + 1), Toast.LENGTH_SHORT).show();
+				finish();
 			}
 		});
 
 	}
-	
-	@Override  
-    protected void onDestroy() {  
-        super.onDestroy();  
-        Log.v("Destory", "Alist onDestroy");
-//        for(int i=0;i<5;i++)
-//        	for(int j=0;j<3;j++) {
-//        		if(image[i][j] != null) 
-//            		image[i][j].recycle();
-//        	}
-//        image = null;
-        System.gc();
-    }  
-	
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
-		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode==9527&&resultCode==RESULT_OK) {
-			
-			Intent intent=new Intent();
-			Bundle bundle = new Bundle();
-			bundle.putString("path", setting.imagenet_selected_image_path);
-			intent.putExtra("bundle", bundle);
-			setResult(RESULT_OK, intent);
-			finish();
-		}
-	}
-	
-	
-	
 	private Button.OnClickListener push = new Button.OnClickListener() {
 		public void onClick(View arg0) {
 			if (searchable) {
-				progressDialog = ProgressDialog.show(Alist.this, "請稍等...", "搜尋中...", true);
-//				progressDialog = new ProgressDialog(Alist.this);
-//				progressDialog.setTitle("請稍等...");
-//				progressDialog.setMessage("搜尋圖片中...");
-//				progressDialog.setCancelable(true);
-//				progressDialog.setButton(DialogInterface.BUTTON_POSITIVE, "取消", new DialogInterface.OnClickListener() {
-//				    @Override
-//				    public void onClick(DialogInterface dialog, int which) {
-//				        dialog.dismiss();
-//				        
-//				    }
-//				});
-//				progressDialog.show();
 				searchable = false;
-				EditText Et = (EditText) findViewById(id.editText1);
+				EditText Et = (EditText) findViewById(R.id.editText1);
 				PostTask1 posttask;
 				posttask = new PostTask1(Et.getText().toString());
 
@@ -387,8 +307,6 @@ public class Alist extends Activity {
 			}
 
 			viewholder.text.setText("TOP" + (position + 1));
-			viewholder.text.setTextSize(18);
-			viewholder.text.setTextColor(Color.WHITE);
 			return convertView;
 		}
 

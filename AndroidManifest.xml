@@ -30,6 +30,27 @@
             android:label="@string/title_activity_alist"
             android:screenOrientation="landscape" >
         </activity>
+        
+                <activity
+            android:name="com.example.funmaker.ImageListActivity"
+            android:label="@string/ac_name_image_list" />
+        <activity
+            android:name="com.example.funmaker.ImageGridActivity"
+            android:label="@string/ac_name_image_grid" />
+        <activity
+            android:name="com.example.funmaker.ImagePagerActivity"
+            android:label="@string/ac_name_image_pager" />
+        <activity
+            android:name="com.example.funmaker.ImageGalleryActivity"
+            android:label="@string/ac_name_image_gallery" />
+         <activity
+            android:name="com.example.funmaker.Showmore"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/title_activity_search" 
+            android:screenOrientation="landscape" />
+            
+            
+        
         <activity
             android:name="com.example.funmaker.Result"
             android:label="@string/title_activity_result"

@@ -1001,7 +1001,7 @@ public class DrawEditor extends Activity {
 //					}
 //				})
 //				.show();
-				Intent addimg = new Intent(DrawEditor.this, Alist.class);
+				Intent addimg = new Intent(DrawEditor.this, Showmore.class);
 				startActivityForResult(addimg, REQUEST_CODE_INSERT_IMAGE);
 			}
 		}

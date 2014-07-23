@@ -181,7 +181,7 @@ public class Showmore extends Activity {
 
 				}
 				mDialog.dismiss();
-
+				Log.v("teststeststests1", Constants.IMAGES[i] + "");
 				DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
 						.cacheInMemory(false)
 						// 1.8.6包使用時候，括號裏面傳入參數true
@@ -189,7 +189,7 @@ public class Showmore extends Activity {
 						// 1.8.6包使用時候，括號裏面傳入參數true
 						.imageScaleType(ImageScaleType.IN_SAMPLE_INT)
 						.bitmapConfig(Bitmap.Config.RGB_565).build();
-
+				Log.v("teststeststests2", Constants.IMAGES[i] + "");
 				ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
 						getApplicationContext())
 						.defaultDisplayImageOptions(defaultOptions)
@@ -201,13 +201,22 @@ public class Showmore extends Activity {
 						.writeDebugLogs() // Remove for release app
 
 						.build();
+				Log.v("teststeststests3", Constants.IMAGES[i] + "");
+				Log.v("teststeststests4", Constants.IMAGES[i] + "");
 				ImageLoader.getInstance().init(config);
+				Log.v("teststeststests5", Constants.IMAGES[i] + "");
 				ImageLoader imageLoader = ImageLoader.getInstance();
+				Log.v("teststeststests6", Constants.IMAGES[i] + "");
 				imageLoader.clearDiscCache();
+				Log.v("teststeststests7", Constants.IMAGES[i] + "");
 				imageLoader.clearMemoryCache();
+				Log.v("teststeststests8", Constants.IMAGES[i] + "");
 				Intent intent = new Intent(Showmore.this, ImageGridActivity.class);
+				Log.v("teststeststests9", Constants.IMAGES[i] + "");
 				intent.putExtra(Extra.IMAGES, Constants.IMAGES);
+				Log.v("teststeststests10", Constants.IMAGES[i] + "");
 				startActivity(intent);
+				Log.v("teststeststests11", Constants.IMAGES[i] + "");
 				Showmore.this.finish();
 			} else {
 				AlertDialog.Builder dialog = new AlertDialog.Builder(Showmore.this);

@@ -15,12 +15,12 @@
  *******************************************************************************/
 package com.example.funmaker;
 
+import com.example.funmaker.Constants.Config;
 import android.annotation.TargetApi;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.StrictMode;
-import com.example.funmaker.Constants.Config;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;

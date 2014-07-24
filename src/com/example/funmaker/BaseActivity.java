@@ -30,21 +30,21 @@ public abstract class BaseActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main_menu, menu);
+//		getMenuInflater().inflate(R.menu.main_menu, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.item_clear_memory_cache:
-				imageLoader.clearMemoryCache();
-				return true;
-			case R.id.item_clear_disc_cache:
-				imageLoader.clearDiscCache();
-				return true;
-			default:
+//		switch (item.getItemId()) {
+//			case R.id.item_clear_memory_cache:
+//				imageLoader.clearMemoryCache();
+//				return true;
+//			case R.id.item_clear_disc_cache:
+//				imageLoader.clearDiscCache();
+//				return true;
+//			default:
 				return false;
-		}
+//		}
 	}
 }
